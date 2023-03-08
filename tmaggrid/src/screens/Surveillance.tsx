@@ -17,19 +17,19 @@ import * as CONST from '../utils/constants';
 import DotPercentCell from '../gird/DotPercentCell';
 
 import './screens.css';
-import { surveillanceData, Isurveillance } from '../data/Surveillance';
+import { surveillanceData, ISurveillance } from '../data/Surveillance';
 
 const SurveillanceGrid = () => {
   const containerStyle = useMemo(() => ({ width: '100%', height: '250px' }), []);
   const gridStyle = useMemo(() => ({ height: '100%', width: '100%', fontSize: '10px' }), []);
   const [columnDefs] = useState<(ColDef | ColGroupDef)[]>([
-    { field: 'sector', pinned: 'left',  headerName: 'Sector', width: 100 },
+    { field: 'sector', pinned: 'left', cellStyle: {textAlign: 'left'}, headerName: 'Sector', width: 100 },
     { field: 'credits', type: 'rightAligned', aggFunc: "sum", valueParser: "Number(newValue)", headerName: 'Credits' },
     { field: 'fye23', type: 'rightAligned', aggFunc: "sum", valueParser: "Number(newValue)", cellRenderer: DotPercentCell, headerName: 'FYE23', width: 80 },
     { field: 'fye22', type: 'rightAligned', aggFunc: "sum", valueParser: "Number(newValue)", cellRenderer: DotPercentCell, headerName: 'FYE22', width: 80 },
     { field: 'fye21', type: 'rightAligned', aggFunc: "sum", valueParser: "Number(newValue)", cellRenderer: DotPercentCell, headerName: 'FYE21', width: 80 },
   ]);
-  const [rowData, setRowData] = useState<Isurveillance[]>();
+  const [rowData, setRowData] = useState<ISurveillance[]>();
 
 
   const defaultColDef = useMemo<ColDef>(() => {

@@ -1,5 +1,4 @@
 import { ICellRendererParams } from 'ag-grid-community';
-import orangeDot from "../assets/orange-filled-circle-16.png";
 import "./styles.css";
 
 import CSS from 'csstype';

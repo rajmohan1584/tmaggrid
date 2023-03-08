@@ -8,7 +8,7 @@ import Box from '@mui/material/Box';
 import PointValues from './screens/PointValues';
 
 function App() {
-  const [screen, setScreen] = useState("home");
+  const [screen, setScreen] = useState("pointvalues");
 
   const onSelect = (name: string) => {
     setScreen(name);

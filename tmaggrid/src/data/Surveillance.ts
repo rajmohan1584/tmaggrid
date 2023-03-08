@@ -55,7 +55,7 @@ export const surveillanceData = [{
 }];
 
 
-export interface Isurveillance {
+export interface ISurveillance {
   sector: string,
   credits: number,
   fye23: number

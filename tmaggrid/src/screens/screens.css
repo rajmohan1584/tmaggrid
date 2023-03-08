@@ -12,6 +12,14 @@
   color: wheat;
 }
 
+.odin2-card-header2 {
+  font-size: 16px !important;
+  padding: 0px !important;
+  background-image: url('../assets/breadcrumbbar-bkg.png');
+  background-repeat: repeat-x;
+  color: wheat;
+}
+
 .odin2-card-content {
   padding: 0px !important;
 }

@@ -14,36 +14,44 @@ import Grid from "@mui/material/Grid";
 import CardHeader from '@mui/material/CardHeader';
 import * as CONST from '../utils/constants';
 
-import DotPercentCell from '../gird/DotPercentCell';
+import PointValuesCell from '../gird/PointValuesCell';
+import {GridToolbar} from '../gird/GridToolbar';
 
 import './screens.css';
-import { surveillanceData, Isurveillance } from '../data/Surveillance';
+import { pointValuesData, IPointValues } from '../data/PointValues';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import InputLabel from '@mui/material/InputLabel';
+import Select from '@mui/material/Select';
+import Toolbar from '@mui/material/Toolbar';
 
 const PointValuesGrid = () => {
-  const containerStyle = useMemo(() => ({ width: '100%', height: '250px' }), []);
-  const gridStyle = useMemo(() => ({ height: '100%', width: '100%', fontSize: '10px' }), []);
+  const containerStyle = useMemo(() => ({ width: '100%', height: '300px' }), []);
+  const gridStyle = useMemo(() => ({ height: '100%', width: '100%', fontSize: '14px' }), []);
   const [columnDefs] = useState<(ColDef | ColGroupDef)[]>([
-    { field: 'sector', pinned: 'left',  headerName: 'Sector', width: 100 },
-    { field: 'credits', type: 'rightAligned', aggFunc: "sum", valueParser: "Number(newValue)", headerName: 'Credits' },
-    { field: 'fye23', type: 'rightAligned', aggFunc: "sum", valueParser: "Number(newValue)", cellRenderer: DotPercentCell, headerName: 'FYE23', width: 80 },
-    { field: 'fye22', type: 'rightAligned', aggFunc: "sum", valueParser: "Number(newValue)", cellRenderer: DotPercentCell, headerName: 'FYE22', width: 80 },
-    { field: 'fye21', type: 'rightAligned', aggFunc: "sum", valueParser: "Number(newValue)", cellRenderer: DotPercentCell, headerName: 'FYE21', width: 80 },
+    { field: 'point', cellStyle: {textAlign: 'left'}, pinned: 'left',  headerName: 'Point', width: 225 },
+    { field: 'c1', headerName: '03/31/20', cellRenderer: PointValuesCell },
+    { field: 'c2', headerName: '03/31/19', cellRenderer: PointValuesCell },
+    { field: 'c3', headerName: '03/31/18', cellRenderer: PointValuesCell },
+    { field: 'c4', headerName: '03/31/17', cellRenderer: PointValuesCell },
+    { field: 'c5', headerName: '03/31/16', cellRenderer: PointValuesCell },
   ]);
-  const [rowData, setRowData] = useState<Isurveillance[]>();
+
+  const [rowData, setRowData] = useState<IPointValues[]>();
 
 
   const defaultColDef = useMemo<ColDef>(() => {
     return {
-      width: 100,
+      width: 150,
       filter: 'agTextColumnFilter',
-      editable: true,
+      editable: false,
       sortable: true,
       resizable: true,
     };
   }, []);
 
   const onGridReady = useCallback((params: GridReadyEvent) => {
-    setRowData(surveillanceData);
+    setRowData(pointValuesData);
   }, []);
 
 
@@ -51,14 +59,13 @@ const PointValuesGrid = () => {
     <div style={containerStyle}>
       <div className="ag-theme-alpine" style={gridStyle} >
         <AgGridReact
-          rowHeight={20}
-          headerHeight={20}
+          rowHeight={30}
+          headerHeight={30}
           rowData={rowData}
           columnDefs={columnDefs}
           defaultColDef={defaultColDef}
           sideBar={CONST.sideBar}
           onGridReady={onGridReady}
-          groupIncludeTotalFooter={true}
         ></AgGridReact>
       </div>
     </div>
@@ -68,11 +75,9 @@ const PointValuesGrid = () => {
 function PointValuesCard() {
   return (
     <Card className="odin2-card">
-      <CardHeader className="odin2-card-header"
-        title={"Point Values"}>
-      </CardHeader>
       <CardContent className="odin2-card-content">
-        <PointValuesGrid />
+      <GridToolbar title="dense" />
+                <PointValuesGrid />
       </CardContent>
       <CardActions>
         <Button size="small">Learn More</Button>
@@ -92,12 +97,11 @@ export default function PointValues() {
           justifyContent: 'center'
         }}
       >
-          <Grid item md={5}><PointValuesCard /></Grid>
-          <Grid item md={5}><PointValuesCard /></Grid>
-          <Grid item md={5}><PointValuesCard /></Grid>
-          <Grid item md={5}><PointValuesCard /></Grid>
-          <Grid item md={5}><PointValuesCard /></Grid>
-          <Grid item md={5}><PointValuesCard /></Grid>
+          <Grid item md={10}><PointValuesCard /></Grid>
+          <Grid item md={10}><PointValuesCard /></Grid>
+          <Grid item md={10}><PointValuesCard /></Grid>
+          <Grid item md={10}><PointValuesCard /></Grid>
+          <Grid item md={10}><PointValuesCard /></Grid>
         </Grid>
     </div>
   );
