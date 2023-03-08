@@ -3,9 +3,9 @@ import { useState } from 'react';
 import BasicGrid from './gird/BasicGrid';
 import {ButtonAppBar} from './nav/AppBar';
 import Home from './screens/Home';
-import Surveillance from './screens/Surveillance';
+import Surveillance from './screens/surveillance/Surveillance';
 import Box from '@mui/material/Box';
-import PointValues from './screens/PointValues';
+import PointValues from './screens/pointvalues/PointValues';
 
 function App() {
   const [screen, setScreen] = useState("pointvalues");

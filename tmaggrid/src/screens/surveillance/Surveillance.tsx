@@ -11,13 +11,13 @@ import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
 import Grid from "@mui/material/Grid";
-import CardHeader from '@mui/material/CardHeader';
-import * as CONST from '../utils/constants';
+import * as CONST from '../../utils/constants';
 
-import DotPercentCell from '../gird/DotPercentCell';
+import DotPercentCell from '../../gird/DotPercentCell';
 
-import './screens.css';
-import { surveillanceData, ISurveillance } from '../data/Surveillance';
+import '../screens.css';
+import { surveillanceData, ISurveillance } from '../../data/Surveillance';
+import { SurveillanceToolbar } from './SurveillanceToolbar';
 
 const SurveillanceGrid = () => {
   const containerStyle = useMemo(() => ({ width: '100%', height: '250px' }), []);
@@ -68,9 +68,7 @@ const SurveillanceGrid = () => {
 function SurveillanceCard() {
   return (
     <Card className="odin2-card">
-      <CardHeader className="odin2-card-header"
-        title={"Financial Data Summary by Sector"}>
-      </CardHeader>
+      <SurveillanceToolbar />
       <CardContent className="odin2-card-content">
         <SurveillanceGrid />
       </CardContent>

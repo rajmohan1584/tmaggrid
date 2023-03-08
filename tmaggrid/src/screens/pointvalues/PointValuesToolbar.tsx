@@ -4,7 +4,7 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import { useState } from "react";
 import AppleIcon from "@mui/icons-material/Apple";
-import './styles.css';
+import '../screens.css';
 
 const toolbarStyle = {
     minHeight: '28px',
@@ -13,8 +13,8 @@ const toolbarStyle = {
     paddingLeft: '4px'
 };
 
-type GridToolbarProps = {
-  title: string;
+type PointValuesToolbarProps = {
+  title?: string;
 }
 
 const DocumentType = () => {
@@ -61,7 +61,7 @@ const SourceDropdown = () => {
     )
 }
 
-export const GridToolbar = ({ title }: GridToolbarProps) => {
+export const PointValuesToolbar = ({ title }: PointValuesToolbarProps) => {
   return (
     <Toolbar style={toolbarStyle}>
       <AppleIcon />

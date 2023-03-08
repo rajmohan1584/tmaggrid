@@ -11,19 +11,13 @@ import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
 import Grid from "@mui/material/Grid";
-import CardHeader from '@mui/material/CardHeader';
-import * as CONST from '../utils/constants';
+import * as CONST from '../../utils/constants';
 
-import PointValuesCell from '../gird/PointValuesCell';
-import {GridToolbar} from '../gird/GridToolbar';
+import PointValuesCell from '../../gird/PointValuesCell';
+import {PointValuesToolbar} from './PointValuesToolbar';
 
-import './screens.css';
-import { pointValuesData, IPointValues } from '../data/PointValues';
-import MenuItem from '@mui/material/MenuItem';
-import FormControl from '@mui/material/FormControl';
-import InputLabel from '@mui/material/InputLabel';
-import Select from '@mui/material/Select';
-import Toolbar from '@mui/material/Toolbar';
+import '../screens.css'
+import { pointValuesData, IPointValues } from '../../data/PointValues';
 
 const PointValuesGrid = () => {
   const containerStyle = useMemo(() => ({ width: '100%', height: '300px' }), []);
@@ -76,8 +70,8 @@ function PointValuesCard() {
   return (
     <Card className="odin2-card">
       <CardContent className="odin2-card-content">
-      <GridToolbar title="dense" />
-                <PointValuesGrid />
+      <PointValuesToolbar />
+      <PointValuesGrid />
       </CardContent>
       <CardActions>
         <Button size="small">Learn More</Button>
