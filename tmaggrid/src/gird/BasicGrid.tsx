@@ -10,7 +10,8 @@ import { ColGroupDef, GridReadyEvent } from 'ag-grid-community';
 
 import { PriceQtyCell, PriceQtyHeader } from './PriceQty';
 import { YieldSpreadCell, YieldSpreadHeader } from './YieldSpread';
-import { BuyActionCell } from './BuyActionCell';
+import BuyActionCell from './BuyActionCell';
+import SellActionCell from './SellActionCell';
 import * as CONST from '../utils/constants';
 
 const BasicGrid = () => {
@@ -45,23 +46,8 @@ const BasicGrid = () => {
     { field: 'matchCount', headerName: 'Matches' },
     { field: 'callDate', headerName: 'Call Date', width: 125 },
     { field: 'callPrice', headerName: 'Call Price', width: 125 },
-
-    {
-      field: 'action', headerName: 'Actions', pinned: 'right',
-      //cellRenderer: ActionCell,
-      valueGetter: (params) => (params.data.matchCount) ? true : false
-    },
-    {
-      headerName:"ACTION",
-      openByDefault: true,
-      marryChildren: true,
-      children:[
         {width:44, cellStyle:{padding:"0px",margin:"0px"},cellRenderer:BuyActionCell, pinned:"right"},
-        {width:44, cellStyle:{padding:"0px",margin:"0px"},cellRenderer:BuyActionCell, pinned:"right", columnGroupShow: "open"},
-        {width:44, cellStyle:{padding:"0px",margin:"0px"},cellRenderer:BuyActionCell, pinned:"right", columnGroupShow: "open"},
-        {width:44, cellStyle:{padding:"0px",margin:"0px"},cellRenderer:BuyActionCell, pinned:"right", columnGroupShow: "open"}
-      ]
-    }
+        {width:44, cellStyle:{padding:"0px",margin:"0px"},cellRenderer:SellActionCell, pinned:"right", columnGroupShow: "open"},
   ]);
   const [rowData, setRowData] = useState<IMatches[]>();
   
@@ -85,7 +71,7 @@ const BasicGrid = () => {
     <div style={containerStyle}>
       <div className="ag-theme-alpine" style={gridStyle} >
         <AgGridReact
-          rowHeight={40}
+          rowHeight={44}
           rowData={rowData}
           columnDefs={columnDefs}
           defaultColDef={defaultColDef}

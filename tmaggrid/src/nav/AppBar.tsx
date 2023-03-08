@@ -25,21 +25,27 @@ const ClientName = () => {
 //export const ButtonAppBar = (onSelect: (name: string) => void) => {
 export const ButtonAppBar: React.FC<TopMenuCallbackProps> = ({ onSelect }: TopMenuCallbackProps) => {
 
-  const topMenu1 = {
-    text: 'Menu1',
+  const tmMenu = {
+    text: 'TRUE MARKET',
     callback: { onSelect },
     items: [
-      { text: 'Surveillance', name: 'surveillance' },
-//      { text: 'WATCH LISTS', name: 'watchlists' },
-//      { text: 'SEARCH', name: 'search' },
-      {text: 'SWAPS POOL', name: 'swapspool'},
+      {text: 'Swaps Pool', name: 'swapspool'},
     ]
   };
 
-  const excelMenu = {
-    text: "Excel",
+  const chartsMenu = {
+    text: "CHARTS",
     callback: { onSelect },
     items: [
+      { text: 'Market Stats', name: 'marketstats' },
+    ]
+  }
+
+  const odinMenu = {
+    text: "ODIN2",
+    callback: { onSelect },
+    items: [
+      { text: 'Surveillance', name: 'surveillance' },
       { text: 'Point Values', name: 'pointvalues' },
       { text: 'Comparative Analysis', name: 'comparativeanalysis' },
     ]
@@ -53,10 +59,11 @@ export const ButtonAppBar: React.FC<TopMenuCallbackProps> = ({ onSelect }: TopMe
           <Typography style={{ marginRight: 16 }}></Typography>
           <ClientName />
           <Typography style={{ marginRight: 32 }}></Typography>
-          <TopMenuItem tmi={topMenu1} />
-          <TopMenuItem tmi={topMenu1} />
-          <TopMenuItem tmi={topMenu1} />
-          <TopMenuItem tmi={excelMenu} />
+          <TopMenuItem tmi={odinMenu} />
+           <Typography style={{ marginRight: 12 }}></Typography>
+         <TopMenuItem tmi={chartsMenu} />
+          <Typography style={{ marginRight: 12 }}></Typography>
+          <TopMenuItem tmi={tmMenu} />
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
           </Typography>
           <Search>

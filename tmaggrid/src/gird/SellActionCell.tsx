@@ -7,10 +7,10 @@ export default (props: ICellRendererParams) => {
     <Box
             sx={{
             cursor:"pointer",width:"32px",height:"32px",textAlign:"center",
-            margin:"4px",color:"white",backgroundColor: "rgb(80, 109, 145)", borderRadius: "6px",
+            margin:"4px",color:"white",backgroundColor: "rgb(167, 71, 71)", borderRadius: "6px",
             }}
             >
-                {"BUY"}
+                {"SELL"}
             </Box>
     );
 };
