@@ -10,6 +10,7 @@ import { ColGroupDef, GridReadyEvent } from 'ag-grid-community';
 
 import { PriceQtyCell, PriceQtyHeader } from './PriceQty';
 import { YieldSpreadCell, YieldSpreadHeader } from './YieldSpread';
+import * as CONST from '../utils/constants';
 
 const BasicGrid = () => {
   const containerStyle = useMemo(() => ({ width: '100%', height: '500px' }), []);
@@ -67,36 +68,6 @@ const BasicGrid = () => {
     setRowData(matchesData);
   }, []);
 
-  const sideBar = {
-    toolPanels: [
-      {
-        id: 'columns',
-        labelDefault: 'Columns',
-        labelKey: 'columns',
-        iconKey: 'columns',
-        toolPanel: 'agColumnsToolPanel',
-        toolPanelParams: {
-          suppressRowGroups: true,
-          suppressValues: true,
-          suppressPivots: true,
-          suppressPivotMode: true,
-          suppressColumnFilter: true,
-          suppressColumnSelectAll: true,
-          suppressColumnExpandAll: true,
-        },
-      }, {
-        id: 'filters',
-        labelDefault: 'Filters',
-        labelKey: 'filters',
-        iconKey: 'filter',
-        toolPanel: 'agFiltersToolPanel',
-        toolPanelParams: {
-          suppressFilterSearch: true
-        }
-      }
-    ],
-      //defaultToolPanel: 'columns',
-  }
 
   return (
     <div style={containerStyle}>
@@ -106,7 +77,7 @@ const BasicGrid = () => {
           rowData={rowData}
           columnDefs={columnDefs}
           defaultColDef={defaultColDef}
-          sideBar={sideBar}
+          sideBar={CONST.sideBar}
           onGridReady={onGridReady}
         ></AgGridReact>
       </div>

@@ -20,7 +20,7 @@ const qhstyle: CSS.Properties = {
 
 export const YieldSpreadCell = (props: ICellRendererParams) => {
   const v = (props.getValue) ? props.getValue() : 'xx';
-  console.log(v);
+
   let p = '--', q = '--';
   if (Array.isArray(v)) {
     if (v.length > 0) {

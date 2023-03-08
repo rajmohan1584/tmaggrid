@@ -4,6 +4,7 @@ import BasicGrid from './gird/BasicGrid';
 import {ButtonAppBar} from './nav/AppBar';
 import Home from './screens/Home';
 import Surveillance from './screens/Surveillance';
+import Box from '@mui/material/Box';
 
 function App() {
   const [screen, setScreen] = useState("home");
@@ -20,6 +21,7 @@ function App() {
   return (
     <div className="App">
       <ButtonAppBar onSelect={onSelect} />
+      <Box sx={{ height: '25px' }} />
       {renderScreen()}
     </div>
   );

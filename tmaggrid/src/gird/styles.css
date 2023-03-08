@@ -30,3 +30,8 @@
 .marketHeaderGroup {
   text-align: center;
 }
+
+.odin2-dot-percent::after {
+  margin-left: 6px;
+  content: url('../assets/orange-filled-circle-8.png');
+}
