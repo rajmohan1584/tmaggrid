@@ -36,6 +36,14 @@ export const ButtonAppBar: React.FC<TopMenuCallbackProps> = ({ onSelect }: TopMe
     ]
   };
 
+  const excelMenu = {
+    text: "Excel",
+    callback: { onSelect },
+    items: [
+      { text: 'Point Values', name: 'pointvalues' },
+    ]
+  }
+  
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static" className='odin2-app-toolbar'>
@@ -47,7 +55,7 @@ export const ButtonAppBar: React.FC<TopMenuCallbackProps> = ({ onSelect }: TopMe
           <TopMenuItem tmi={topMenu1} />
           <TopMenuItem tmi={topMenu1} />
           <TopMenuItem tmi={topMenu1} />
-          <TopMenuItem tmi={topMenu1} />
+          <TopMenuItem tmi={excelMenu} />
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
           </Typography>
           <Search>

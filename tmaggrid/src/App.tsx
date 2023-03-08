@@ -5,6 +5,7 @@ import {ButtonAppBar} from './nav/AppBar';
 import Home from './screens/Home';
 import Surveillance from './screens/Surveillance';
 import Box from '@mui/material/Box';
+import PointValues from './screens/PointValues';
 
 function App() {
   const [screen, setScreen] = useState("home");
@@ -16,6 +17,7 @@ function App() {
   const renderScreen = () => {
     if (screen === "surveillance") return <Surveillance />
     if (screen === "swapspool") return <BasicGrid />;
+    if (screen === "pointvalues") return <PointValues />;
     return <Home />;
   }
   return (
