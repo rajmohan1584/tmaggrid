@@ -31,7 +31,22 @@
   text-align: center;
 }
 
-.odin2-dot-percent::after {
+.odin2-dot-percent-orange::after {
   margin-left: 6px;
   content: url('../assets/orange-filled-circle-8.png');
+}
+
+.odin2-dot-percent-blue::after {
+  margin-left: 6px;
+  content: url('../assets/blue-filled-circle-8.png');
+}
+
+.odin2-dot-percent-green::after {
+  margin-left: 6px;
+  content: url('../assets/green-filled-circle-8.png');
+}
+
+.odin2-dot-percent-red::after {
+  margin-left: 6px;
+  content: url('../assets/red-filled-circle-8.png');
 }

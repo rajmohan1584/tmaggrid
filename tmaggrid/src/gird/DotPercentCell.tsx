@@ -9,15 +9,16 @@ const sstyle: CSS.Properties = {
   
 export default (props: ICellRendererParams) => {
   const v = props.value ?? 0;
-  let color = "blue";
-  if (v < 50) color = "orange";
+  let color = "red";
+  if (v < 25) color = "orange";
   else
-  if (v < 75) color = "green";
-  color = "orange";
-  const src = `../assets/${color}`;
+  if (v < 50) color = "green";
+  else
+  if (v < 50) color = "blue";
+
   return (
     <span style={sstyle}>
-      <div className="odin2-dot-percent">{props.value}</div>
+      <div className={`odin2-dot-percent-${color}`}>{props.value} %</div>
     </span>
   );
 };

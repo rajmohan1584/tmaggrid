@@ -23,11 +23,11 @@ const SurveillanceGrid = () => {
   const containerStyle = useMemo(() => ({ width: '100%', height: '250px' }), []);
   const gridStyle = useMemo(() => ({ height: '100%', width: '100%', fontSize: '10px' }), []);
   const [columnDefs] = useState<(ColDef | ColGroupDef)[]>([
-    { field: 'sector', pinned: 'left',  headerName: 'Sector', width: 125 },
-    { field: 'credits', aggFunc: "sum", valueParser: "Number(newValue)", cellRenderer: DotPercentCell, headerName: 'Credits' },
-    { field: 'fye23Reviewed', aggFunc: "sum", valueParser: "Number(newValue)", cellRenderer: DotPercentCell, headerName: 'FYE23 Reviewed', width: 125 },
-    { field: 'fye22Reviewed', aggFunc: "sum", valueParser: "Number(newValue)", cellRenderer: DotPercentCell, headerName: 'FYE22 Reviewed', width: 125 },
-    { field: 'fye21Reviewed', aggFunc: "sum", valueParser: "Number(newValue)", cellRenderer: DotPercentCell, headerName: 'FYE21 Reviewed', width: 125 },
+    { field: 'sector', pinned: 'left',  headerName: 'Sector', width: 100 },
+    { field: 'credits', type: 'rightAligned', aggFunc: "sum", valueParser: "Number(newValue)", headerName: 'Credits' },
+    { field: 'fye23', type: 'rightAligned', aggFunc: "sum", valueParser: "Number(newValue)", cellRenderer: DotPercentCell, headerName: 'FYE23', width: 80 },
+    { field: 'fye22', type: 'rightAligned', aggFunc: "sum", valueParser: "Number(newValue)", cellRenderer: DotPercentCell, headerName: 'FYE22', width: 80 },
+    { field: 'fye21', type: 'rightAligned', aggFunc: "sum", valueParser: "Number(newValue)", cellRenderer: DotPercentCell, headerName: 'FYE21', width: 80 },
   ]);
   const [rowData, setRowData] = useState<Isurveillance[]>();
 
