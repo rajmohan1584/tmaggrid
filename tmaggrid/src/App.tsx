@@ -6,9 +6,10 @@ import Home from './screens/Home';
 import Surveillance from './screens/surveillance/Surveillance';
 import Box from '@mui/material/Box';
 import PointValues from './screens/pointvalues/PointValues';
+import ComparativeAnalysis from './screens/analysis/ComparativeAnalysis';
 
 function App() {
-  const [screen, setScreen] = useState("pointvalues");
+  const [screen, setScreen] = useState("comparativeanalysis");
 
   const onSelect = (name: string) => {
     setScreen(name);
@@ -18,6 +19,8 @@ function App() {
     if (screen === "surveillance") return <Surveillance />
     if (screen === "swapspool") return <BasicGrid />;
     if (screen === "pointvalues") return <PointValues />;
+    if (screen === "comparativeanalysis") return <ComparativeAnalysis />;
+    
     return <Home />;
   }
   return (

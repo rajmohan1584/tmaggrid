@@ -16,12 +16,22 @@
   
     --ag-font-size: 10px;
     --ag-font-family: monospace;
+    
   }
 
 .ag-theme-alpine .ag-filter-toolpanel-group-title-bar {
   /* use a semi-transparent background to show the background colour behind */
   background-color: rgb(255, 255, 255, 0.2);
 }
+
+.ag-theme-alpine .ag-header-cell {
+  border-right: 1px solid ag-param(secondary-border-color);
+}
+
+
+
+
+
 
 .ag-header-group-cell-no-group .ag-header-cell-resize::after {
   display: none;
@@ -51,3 +61,23 @@
   content: url('../assets/red-filled-circle-8.png');
 }
 
+.odin2-score-red {
+  background-color: #a1052d;
+  color: white;
+  width: 20px;
+  height: 23px;
+}
+
+.odin2-score-green {
+  background-color: #387034;
+  color: white;
+  width: 20px;
+  height: 23px;
+}
+
+.odin2-score-brown {
+  background-color: #aa9e5c;
+  color: white;
+  width: 20px;
+  height: 23px;
+}

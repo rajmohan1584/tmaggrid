@@ -41,6 +41,7 @@ export const ButtonAppBar: React.FC<TopMenuCallbackProps> = ({ onSelect }: TopMe
     callback: { onSelect },
     items: [
       { text: 'Point Values', name: 'pointvalues' },
+      { text: 'Comparative Analysis', name: 'comparativeanalysis' },
     ]
   }
   

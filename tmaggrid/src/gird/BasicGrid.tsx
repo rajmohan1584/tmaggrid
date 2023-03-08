@@ -10,6 +10,7 @@ import { ColGroupDef, GridReadyEvent } from 'ag-grid-community';
 
 import { PriceQtyCell, PriceQtyHeader } from './PriceQty';
 import { YieldSpreadCell, YieldSpreadHeader } from './YieldSpread';
+import { BuyActionCell } from './BuyActionCell';
 import * as CONST from '../utils/constants';
 
 const BasicGrid = () => {
@@ -49,6 +50,17 @@ const BasicGrid = () => {
       field: 'action', headerName: 'Actions', pinned: 'right',
       //cellRenderer: ActionCell,
       valueGetter: (params) => (params.data.matchCount) ? true : false
+    },
+    {
+      headerName:"ACTION",
+      openByDefault: true,
+      marryChildren: true,
+      children:[
+        {width:44, cellStyle:{padding:"0px",margin:"0px"},cellRenderer:BuyActionCell, pinned:"right"},
+        {width:44, cellStyle:{padding:"0px",margin:"0px"},cellRenderer:BuyActionCell, pinned:"right", columnGroupShow: "open"},
+        {width:44, cellStyle:{padding:"0px",margin:"0px"},cellRenderer:BuyActionCell, pinned:"right", columnGroupShow: "open"},
+        {width:44, cellStyle:{padding:"0px",margin:"0px"},cellRenderer:BuyActionCell, pinned:"right", columnGroupShow: "open"}
+      ]
     }
   ]);
   const [rowData, setRowData] = useState<IMatches[]>();
