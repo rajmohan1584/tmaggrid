@@ -6,8 +6,8 @@ import Box from '@mui/material/Box';
 const sstyle: CSS.Properties = {
   float: "left",
 }
-  
-export default (props: ICellRendererParams) => {
+
+const PointValuesCell = (props: ICellRendererParams) => {
   const v = props.value;
 
   if (v === null) {
@@ -44,3 +44,6 @@ export default (props: ICellRendererParams) => {
     </span>
   );
 };
+
+
+export default PointValuesCell;

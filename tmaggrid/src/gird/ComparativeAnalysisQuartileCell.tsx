@@ -1,13 +1,14 @@
 import { ICellRendererParams } from 'ag-grid-community';
 import "./styles.css";
 
-import CSS from 'csstype';
+//import CSS from 'csstype';
 import Box from '@mui/material/Box';
+/*
 const sstyle: CSS.Properties = {
   float: "left",
 }
-  
-export default (props: ICellRendererParams) => {
+*/
+const ComparativeAnalysisQuartileCell = (props: ICellRendererParams) => {
   const v = props.value;
 
   let sv = null;
@@ -42,3 +43,5 @@ export default (props: ICellRendererParams) => {
             </Box>
         );
 };
+
+export default ComparativeAnalysisQuartileCell;

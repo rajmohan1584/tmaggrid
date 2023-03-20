@@ -6,8 +6,8 @@ import CSS from 'csstype';
 const sstyle: CSS.Properties = {
   float: "right",
 }
-  
-export default (props: ICellRendererParams) => {
+
+const MarketStatsCell = (props: ICellRendererParams) => {
   const v = props.value;
 
   if (v === null) return null;
@@ -20,3 +20,5 @@ export default (props: ICellRendererParams) => {
     </span>
   );
 };
+
+export default MarketStatsCell;

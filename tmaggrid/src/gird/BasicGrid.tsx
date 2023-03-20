@@ -1,4 +1,4 @@
-import React, { useCallback, useMemo, useRef, useState } from 'react';
+import React, { useCallback, useMemo, useState } from 'react';
 import { AgGridReact } from 'ag-grid-react';
 import 'ag-grid-enterprise';
 import 'ag-grid-community/styles/ag-grid.css';
@@ -17,7 +17,7 @@ import * as CONST from '../utils/constants';
 const BasicGrid = () => {
   const containerStyle = useMemo(() => ({ width: '100%', height: '500px' }), []);
   const gridStyle = useMemo(() => ({ height: '100%', width: '100%', fontSize: '10px' }), []);
-  const [columnDefs, setColumnDefs] = useState<(ColDef | ColGroupDef)[]>([
+  const [columnDefs/*, setColumnDefs*/] = useState<(ColDef | ColGroupDef)[]>([
     { field: 'cusip', pinned:'left', headerName: 'CUSIP', width: 125 },
     { field: 'clientId', pinned: 'left', headerName:'Client' },
     { field: 'accountXref', headerName: 'Act Xref', width: 125 },
@@ -50,8 +50,8 @@ const BasicGrid = () => {
         {width:44, cellStyle:{padding:"0px",margin:"0px"},cellRenderer:SellActionCell, pinned:"right", columnGroupShow: "open"},
   ]);
   const [rowData, setRowData] = useState<IMatches[]>();
-  
-  
+
+
   const defaultColDef = useMemo<ColDef>(() => {
     return {
       width: 100,

@@ -5,8 +5,8 @@ import CSS from 'csstype';
 const sstyle: CSS.Properties = {
   float: "right",
 }
-  
-export default (props: ICellRendererParams) => {
+
+const DotPercentCell = (props: ICellRendererParams) => {
   const v = props.value ?? 0;
   let color = "red";
   if (v < 25) color = "orange";
@@ -21,3 +21,5 @@ export default (props: ICellRendererParams) => {
     </span>
   );
 };
+
+export default DotPercentCell;

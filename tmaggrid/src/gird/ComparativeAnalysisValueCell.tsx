@@ -6,8 +6,8 @@ import CSS from 'csstype';
 const sstyle: CSS.Properties = {
   textAlign: 'right',
 }
-  
-export default (props: ICellRendererParams) => {
+
+const ComparativeAnalysisValueCell = (props: ICellRendererParams) => {
   const v = props.value;
   let sv = v;
   if (typeof v === "number") {
@@ -20,3 +20,5 @@ export default (props: ICellRendererParams) => {
     </span>
   );
 };
+
+export default ComparativeAnalysisValueCell;

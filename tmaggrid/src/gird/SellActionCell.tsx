@@ -2,7 +2,7 @@ import { ICellRendererParams } from 'ag-grid-community';
 import "./styles.css";
 import Box from '@mui/material/Box';
 
-export default (props: ICellRendererParams) => {
+const PointValuesCell = (props: ICellRendererParams) => {
     return (
     <Box
             sx={{
@@ -14,3 +14,5 @@ export default (props: ICellRendererParams) => {
             </Box>
     );
 };
+
+export default PointValuesCell;

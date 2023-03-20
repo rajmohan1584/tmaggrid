@@ -7,16 +7,16 @@ import { ColDef } from 'ag-grid-enterprise';
 import { ColGroupDef, GridReadyEvent, AgChartThemeOverrides, FirstDataRenderedEvent, CreateRangeChartParams } from 'ag-grid-community';
 
 import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
+//import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
-import Button from '@mui/material/Button';
+//import Button from '@mui/material/Button';
 import Grid from "@mui/material/Grid";
 import * as CONST from '../../utils/constants';
 
 //import MarketStatsCell from '../../gird/MarketStatsCell';
 
 import '../screens.css'
-import { marketStatsData, IMarketStats } from '../../data/MarketStats';
+import { /*marketStatsData,*/ IMarketStats } from '../../data/MarketStats';
 import MarketStatsCell from '../../gird/MarketStatsCell';
 
 const MarketStatsGrid = () => {
@@ -32,6 +32,7 @@ const MarketStatsGrid = () => {
     }, 500);
   };
 
+  /*
   // Stop the interval
     const stopInterval = () => {
         if (intervalref.current) {
@@ -39,6 +40,7 @@ const MarketStatsGrid = () => {
             intervalref.current = null;
         }
     };
+    */
     // Use the useEffect hook to cleanup the interval when the component unmounts
     useEffect(() => {
         // here's the cleanup function
